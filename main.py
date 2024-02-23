@@ -11,7 +11,9 @@ class MyWindow(QMainWindow):
         uic.loadUi('main.ui', self)
         self.email = email
         self.password = password
+        self.set_up_ui()
 
+    def set_up_ui(self):
         self.password_input.setEchoMode(QtWidgets.QLineEdit.Password)
         self.login_button.clicked.connect(self.login)
         self.setFixedWidth(800)
@@ -29,8 +31,9 @@ class MyWindow(QMainWindow):
         print('Logged in')
 
     def handle_invalid_login(self):
-        self.email_input.setStyleSheet('border: 1px solid red')
+        self.invalid_password_label.setText('Invalid email or password')
         self.password_input.setStyleSheet('border: 1px solid red')
+        self.email_input.setStyleSheet('border: 1px solid red')
 
 
 app = QApplication(sys.argv)
