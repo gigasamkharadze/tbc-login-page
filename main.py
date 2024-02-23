@@ -28,7 +28,7 @@ class MyWindow(QMainWindow):
             self.handle_invalid_login()
 
     def handle_login(self):
-        print('Logged in')
+        self.stackedWidget.setCurrentIndex(1)
 
     def handle_invalid_login(self):
         self.invalid_password_label.setText('Invalid email or password')
@@ -37,6 +37,6 @@ class MyWindow(QMainWindow):
 
 
 app = QApplication(sys.argv)
-window = MyWindow()
+window = MyWindow('1', '1')
 window.show()
 sys.exit(app.exec_())
