@@ -37,6 +37,11 @@ class MyWindow(QMainWindow):
 
 
 app = QApplication(sys.argv)
+'''
+Here we are creating an instance of MyWindow class.
+For now, Either we have to pass email and password as arguments or 
+it defaults to 'gigasamkharadzee@gmail.com' and '123456' respectively. 
+'''
 window = MyWindow('1', '1')
 window.show()
 sys.exit(app.exec_())
